@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarineTask.Page1"
+             Title="Камеры">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ListView x:Name="camerasList"
+                          ItemsSource="{Binding camerasList}"
+                          RowHeight="60"
+                          ItemSelected="camerasList_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                            <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Column="0" 
+                                                 Grid.Row="0"
+                                                 Orientation="Horizontal">
+                                        <Label>Имя камеры:</Label>
+                                        <Label Text="{Binding name}"></Label>
+                                    </StackLayout>
+                                    
+                                <StackLayout Grid.Column="0" 
+                                                 Grid.Row="1"
+                                                 Orientation="Horizontal">
+                                    <Label>Есть звук:</Label>
+                                    <Label Text="{Binding sound}"></Label>
+                                </StackLayout>
+                                <StackLayout Grid.Column="0"
+                                                     Grid.Row="2"
+                                                     Orientation="Horizontal">
+                                    <Label>Родительская папка:</Label>
+                                    <Label Text="{Binding parent}"></Label>
+                                </StackLayout>
+                            </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
